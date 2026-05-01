@@ -40,7 +40,7 @@ DocAlign will:
 - **Format agnostic** — detects documentation in any text format, not just Markdown.
 - **Surgical updates** — edits affected sections only, preserves existing writing style.
 - **Never creates files** — only aligns existing documentation.
-- **Always confirms** — you see the report and approve before any changes.
+- **Confirms by default** — you see the report and approve before changes (silent workflows bypass this)
 
 ## Plugin Structure
 
