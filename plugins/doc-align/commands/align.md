@@ -1,5 +1,5 @@
 ---
-description: Analyze code changes and update documentation to keep it aligned. Shows impact report and applies changes after user confirmation.
+description: Analyze code changes and update documentation to keep it aligned. Run /doc-align:align to get an impact report and apply changes after confirmation.
 allowed-tools: Bash(git log:*), Bash(git diff:*), Bash(find *), Read, Edit, Glob, Grep, AskUserQuestion
 ---
 
