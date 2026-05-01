@@ -31,7 +31,15 @@ find . -maxdepth 3 -not -path "./.git/*" -not -path "./node_modules/*" -not -pat
    - A static site's content files are source code
    - `.md` files in `src/` that are part of the build pipeline
 
-4. Present the identified doc list briefly so the user can verify if anything was missed or incorrectly included.
+4. **Also exclude** Claude Code and plugin metadata files — these are not project documentation:
+   - `CLAUDE.md`, `AGENTS.md` — Claude Code project configuration
+   - `.claude/` directory — commands, hooks, skills, memory
+   - `.claude-plugin/` directory — plugin identity and marketplace manifests
+   - `.mcp.json` — MCP server configuration
+   - `docs/specs/`, `docs/plans/` — plugin design and planning docs
+   - Any files already excluded by `.gitignore` (e.g., `node_modules/`, `.git/`)
+
+5. Present the identified doc list briefly so the user can verify if anything was missed or incorrectly included.
 
 ### Step 2: Gather Context
 
