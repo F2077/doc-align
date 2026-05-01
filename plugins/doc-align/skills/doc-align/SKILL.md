@@ -1,13 +1,13 @@
 ---
 name: doc-align
-description: Use when the user runs /doc-align to check if documentation needs updating after code changes. AI-analyzes the change impact on project docs, generates a detailed report, and updates docs after user confirmation.
+description: Use when the user runs /doc-align:align to check if documentation needs updating after code changes. AI-analyzes the change impact on project docs, generates a detailed report, and updates docs after user confirmation.
 ---
 
 # DocAlign
 
 ## Overview
 
-This skill is invoked via the `/doc-align` command. It analyzes whether recent code changes require documentation updates, presents a detailed report, and applies updates after user confirmation.
+This skill is invoked via the `/doc-align:align` command. It analyzes whether recent code changes require documentation updates, presents a detailed report, and applies updates after user confirmation.
 
 ## Workflow
 
@@ -37,14 +37,14 @@ find . -maxdepth 3 -not -path "./.git/*" -not -path "./node_modules/*" -not -pat
 
 Gather commit information:
 
-For `/doc-align` with no args (analyze last commit):
+For `/doc-align:align` with no args (analyze last commit):
 ```bash
 git log -1 --format="%h %s"
 git diff HEAD~1 --stat
 git diff HEAD~1 --name-only
 ```
 
-For `/doc-align HEAD~3..HEAD` (analyze a range):
+For `/doc-align:align HEAD~3..HEAD` (analyze a range):
 ```bash
 git log --oneline HEAD~3..HEAD
 git diff HEAD~3..HEAD --stat

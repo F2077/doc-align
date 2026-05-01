@@ -18,11 +18,11 @@ claude plugin install doc-align
 
 ## Usage
 
-Run `/doc-align` in your Claude Code session:
+Run `/doc-align:align` in your Claude Code session:
 
 ```
-> /doc-align              # Analyze last commit
-> /doc-align HEAD~3..HEAD # Analyze a range of commits
+> /doc-align:align              # Analyze last commit
+> /doc-align:align HEAD~3..HEAD # Analyze a range of commits
 ```
 
 DocAlign will:
@@ -46,7 +46,7 @@ DocAlign will:
 ```
 plugins/doc-align/
 ├── .claude-plugin/plugin.json     Plugin identity
-├── commands/doc-align.md          /doc-align command
+├── commands/align.md              /doc-align:align command
 └── skills/doc-align/SKILL.md     Core analysis skill
 ```
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-DocAlign is a Claude Code plugin that analyzes code changes and updates documentation to keep it aligned. It is invoked manually via `/doc-align` — there are no automatic hooks or background processes.
+DocAlign is a Claude Code plugin that analyzes code changes and updates documentation to keep it aligned. It is invoked manually via `/doc-align:align` — there are no automatic hooks or background processes.
 
 ## Architecture
 
@@ -19,16 +19,16 @@ doc-align/                        # GitHub repo = Claude Code marketplace
 │       ├── .claude-plugin/
 │       │   └── plugin.json    # Plugin identity and metadata
 │       ├── commands/
-│       │   └── doc-align.md   # /doc-align command definition
+│       │   └── align.md       # /doc-align:align command definition
 │       └── skills/
 │           └── doc-align/
 │               └── SKILL.md   # Core 7-step analysis workflow
 └── docs/                        # Design specs (not part of plugin distribution)
 ```
 
-### How /doc-align works
+### How /doc-align:align works
 
-1. User runs `/doc-align` (with optional commit range like `HEAD~3..HEAD`)
+1. User runs `/doc-align:align` (with optional commit range like `HEAD~3..HEAD`)
 2. Command delegates to the `doc-align` skill
 3. Skill executes 7-step workflow: scan docs → gather diff → classify changes → assess impact → generate report → **user confirmation** → execute updates
 4. User must explicitly approve via `AskUserQuestion` before any file is modified
@@ -53,14 +53,14 @@ claude plugin marketplace add /mnt/g/VSCodeProjects/doc-align
 claude plugin install doc-align
 ```
 
-### Testing /doc-align
+### Testing /doc-align:align
 
 ```bash
 # Analyze last commit
-/doc-align
+/doc-align:align
 
 # Analyze a commit range
-/doc-align HEAD~3..HEAD
+/doc-align:align HEAD~3..HEAD
 ```
 
 ### Adding new commands

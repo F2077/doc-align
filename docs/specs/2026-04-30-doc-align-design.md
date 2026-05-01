@@ -6,7 +6,7 @@ Code evolves continuously; documentation often lags behind. After significant mo
 
 ## Solution
 
-A Claude Code plugin that analyzes recent code changes against project documentation, generates an impact report, and updates docs after user confirmation. Invoked on-demand via `/doc-align` — no background hooks, no automatic triggers.
+A Claude Code plugin that analyzes recent code changes against project documentation, generates an impact report, and updates docs after user confirmation. Invoked on-demand via `/doc-align:align` — no background hooks, no automatic triggers.
 
 ## Architecture
 
@@ -19,7 +19,7 @@ doc-align/                          # GitHub repository (also a marketplace)
 │       ├── .claude-plugin/
 │       │   └── plugin.json          # Plugin identity
 │       ├── commands/
-│       │   └── doc-align.md         # /doc-align command
+│       │   └── align.md            # /doc-align:align command
 │       └── skills/
 │           └── doc-align/
 │               └── SKILL.md         # Core analysis skill
@@ -29,12 +29,12 @@ doc-align/                          # GitHub repository (also a marketplace)
 
 ## Trigger Mechanism
 
-### Manual: /doc-align Command
+### Manual: /doc-align:align Command
 
-The sole entry point. Users run `/doc-align` when they want to check documentation alignment.
+The sole entry point. Users run `/doc-align:align` when they want to check documentation alignment.
 
 - **No args**: analyze the latest commit
-- **With args**: e.g. `/doc-align HEAD~3..HEAD` to analyze a commit range
+- **With args**: e.g. `/doc-align:align HEAD~3..HEAD` to analyze a commit range
 
 ### Why No Automatic Trigger
 
