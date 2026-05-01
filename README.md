@@ -28,6 +28,7 @@ Run `/doc-align:align` in your Claude Code session:
 DocAlign will:
 
 1. **Identify docs** — intelligently find all documentation files (any format: .md, .rst, .txt, etc.)
+   - Automatically excludes Claude Code metadata (CLAUDE.md, .claude/, .claude-plugin/), .gitignore'd files, and plugin design docs
 2. **Classify changes** — categorize your code changes by impact type
 3. **Generate report** — show which docs need updating and why
 4. **Confirm** — ask for your approval before making any changes

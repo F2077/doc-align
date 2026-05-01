@@ -9,8 +9,8 @@
   "plugins": [
     {
       "name": "doc-align",
-      "description": "AI-powered documentation alignment tool. Run /doc-align to analyze code changes against project docs, get an impact report, and update docs after confirmation. Supports any doc format (md, rst, txt, etc.)",
-      "version": "0.1.0",
+      "description": "Documentation alignment plugin for Claude Code. Run /doc-align:align to analyze code changes, get an impact report, and update docs after confirmation. Supports any text format.",
+      "version": "0.2.0",
       "author": {
         "name": "F2077"
       },

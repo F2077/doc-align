@@ -1,6 +1,6 @@
 {
   "name": "doc-align",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Documentation alignment plugin for Claude Code — analyzes code changes, assesses doc impact, and updates docs after user confirmation",
   "author": {
     "name": "F2077"
