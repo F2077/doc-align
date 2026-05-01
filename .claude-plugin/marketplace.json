@@ -1,20 +1,20 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "doc-whisperer-marketplace",
+  "name": "doc-align-marketplace",
   "version": "1.0.0",
-  "description": "DocWhisperer plugin marketplace - AI-powered documentation alignment for Claude Code",
+  "description": "DocAlign plugin marketplace - AI-powered documentation alignment for Claude Code",
   "owner": {
     "name": "F2077"
   },
   "plugins": [
     {
-      "name": "doc-whisperer",
+      "name": "doc-align",
       "description": "AI-powered documentation alignment tool. Run /doc-align to analyze code changes against project docs, get an impact report, and update docs after confirmation. Supports any doc format (md, rst, txt, etc.)",
       "version": "0.1.0",
       "author": {
         "name": "F2077"
       },
-      "source": "./plugins/doc-whisperer",
+      "source": "./plugins/doc-align",
       "category": "development"
     }
   ]

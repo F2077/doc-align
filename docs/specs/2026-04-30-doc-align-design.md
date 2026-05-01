@@ -1,6 +1,4 @@
-# DocWhisperer - Design Spec
-
-> The document whisperer: listens to the pulse of code, gently awakens sleeping docs.
+# DocAlign - Design Spec
 
 ## Problem
 
@@ -13,18 +11,18 @@ A Claude Code plugin that analyzes recent code changes against project documenta
 ## Architecture
 
 ```
-doc-whisperer/                        # GitHub repository (also a marketplace)
+doc-align/                          # GitHub repository (also a marketplace)
 ├── .claude-plugin/
 │   └── marketplace.json              # Marketplace manifest
 ├── plugins/
-│   └── doc-whisperer/
+│   └── doc-align/
 │       ├── .claude-plugin/
-│       │   └── plugin.json           # Plugin identity
+│       │   └── plugin.json          # Plugin identity
 │       ├── commands/
-│       │   └── doc-align.md          # /doc-align command
+│       │   └── doc-align.md         # /doc-align command
 │       └── skills/
-│           └── doc-whisperer/
-│               └── SKILL.md          # Core analysis skill
+│           └── doc-align/
+│               └── SKILL.md         # Core analysis skill
 ├── docs/                             # Design docs (not part of plugin)
 └── README.md
 ```
@@ -83,7 +81,7 @@ For each identified documentation file, AI determines:
 ### Step 4: Report Generation
 
 ```
-── DocWhisperer Report ──────────────────────────────
+── DocAlign Report ──────────────────────────────
 
 Commit: <hash> <subject>
 Scope: <categories>
@@ -136,8 +134,8 @@ Surgical edits to affected sections only. Preserves existing writing style and f
 Published as a GitHub repository that doubles as a Claude Code marketplace:
 
 ```bash
-claude plugin marketplace add https://github.com/<user>/doc-whisperer
-claude plugin install doc-whisperer
+claude plugin marketplace add https://github.com/<user>/doc-align
+claude plugin install doc-align
 ```
 
 ## Scope

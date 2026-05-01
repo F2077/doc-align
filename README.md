@@ -1,21 +1,19 @@
-# DocWhisperer
+# DocAlign
 
-> The document whisperer: listens to the pulse of code, gently awakens sleeping docs.
-
-AI-powered documentation alignment plugin for Claude Code.
+AI-powered documentation alignment tool for Claude Code.
 
 ## What It Does
 
-When code changes, documentation drifts. DocWhisperer analyzes your commits, identifies which documentation files are affected, and helps you keep them in sync.
+When code changes, documentation drifts. DocAlign analyzes your commits, identifies which documentation files are affected, and helps you keep them in sync.
 
 ## Installation
 
 ```bash
 # Add this repo as a marketplace
-claude plugin marketplace add https://github.com/F2077/doc-whisperer
+claude plugin marketplace add https://github.com/F2077/doc-align
 
 # Install the plugin
-claude plugin install doc-whisperer
+claude plugin install doc-align
 ```
 
 ## Usage
@@ -27,7 +25,7 @@ Run `/doc-align` in your Claude Code session:
 > /doc-align HEAD~3..HEAD # Analyze a range of commits
 ```
 
-DocWhisperer will:
+DocAlign will:
 
 1. **Identify docs** — intelligently find all documentation files (any format: .md, .rst, .txt, etc.)
 2. **Classify changes** — categorize your code changes by impact type
@@ -46,10 +44,10 @@ DocWhisperer will:
 ## Plugin Structure
 
 ```
-plugins/doc-whisperer/
+plugins/doc-align/
 ├── .claude-plugin/plugin.json     Plugin identity
 ├── commands/doc-align.md          /doc-align command
-└── skills/doc-whisperer/SKILL.md  Core analysis skill
+└── skills/doc-align/SKILL.md     Core analysis skill
 ```
 
 ## License

@@ -1,0 +1,8 @@
+{
+  "name": "doc-align",
+  "version": "0.1.0",
+  "description": "AI-powered documentation alignment tool — analyzes code changes, assesses doc impact, and updates docs after user confirmation",
+  "author": {
+    "name": "F2077"
+  }
+}
