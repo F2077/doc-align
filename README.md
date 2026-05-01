@@ -1,6 +1,6 @@
 # DocAlign
 
-AI-powered documentation alignment tool for Claude Code.
+Documentation alignment plugin for Claude Code.
 
 ## What It Does
 
