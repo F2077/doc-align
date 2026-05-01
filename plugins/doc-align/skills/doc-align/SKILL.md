@@ -1,11 +1,9 @@
 ---
-name: doc-whisperer
+name: doc-align
 description: Use when the user runs /doc-align to check if documentation needs updating after code changes. AI-analyzes the change impact on project docs, generates a detailed report, and updates docs after user confirmation.
 ---
 
-# DocWhisperer
-
-> The document whisperer: listens to the pulse of code, gently awakens sleeping docs.
+# DocAlign
 
 ## Overview
 
@@ -89,7 +87,7 @@ To assess accurately, READ the relevant documentation files. Do not guess based 
 Present the report in this exact format:
 
 ```
-── DocWhisperer Report ──────────────────────────────
+── DocAlign Report ──────────────────────────────
 
 Commit: <hash> <subject>
 Scope: <comma-separated categories>
