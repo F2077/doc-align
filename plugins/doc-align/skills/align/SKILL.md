@@ -20,23 +20,24 @@ Do NOT assume documentation is `.md` only. Instead, scan the project and use AI 
 find . -maxdepth 3 -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./.cargo/*" -not -path "./.claude/*" | sort
 ```
 
-2. Identify documentation files based on:
-   - **Location**: files in `docs/`, `doc/`, `documentation/`, or root-level docs (README, CHANGELOG, etc.)
-   - **Content**: files that describe the project rather than implement it
-   - **Format**: any text-based format — `.md`, `.rst`, `.adoc`, `.txt`, `.html`, `.tex`, `.org`, `.pod`, etc.
-   - **Convention**: files named README, CHANGELOG, CONTRIBUTING, LICENSE (text), API, etc.
-
-3. **Exclude** files that ARE the project's source code, even if they use doc-like formats. For example:
-   - A blog engine's `.md` posts are source code, not docs about the project
-   - A static site's content files are source code
-   - `.md` files in `src/` that are part of the build pipeline
-
-4. **Also exclude** Claude Code and plugin metadata files — these are not project documentation:
+2. **FIRST: Exclude Claude Code and plugin metadata files — NEVER touch these:**
    - `CLAUDE.md`, `AGENTS.md` — Claude Code project configuration
    - `.claude/` directory — commands, hooks, skills, memory
    - `.claude-plugin/` directory — plugin identity and marketplace manifests
    - `.mcp.json` — MCP server configuration
    - `docs/specs/`, `docs/plans/` — plugin design and planning docs
+   - Anything in `.gitignore` (node_modules/, .git/, etc.)
+
+3. Identify documentation files based on:
+   - **Location**: files in `docs/`, `doc/`, `documentation/`, or root-level docs (README, CHANGELOG, etc.)
+   - **Content**: files that describe the project rather than implement it
+   - **Format**: any text-based format — `.md`, `.rst`, `.adoc`, `.txt`, `.html`, `.tex`, `.org`, `.pod`, etc.
+   - **Convention**: files named README, CHANGELOG, CONTRIBUTING, LICENSE (text), API, etc.
+
+4. **Exclude** files that ARE the project's source code, even if they use doc-like formats. For example:
+   - A blog engine's `.md` posts are source code, not docs about the project
+   - A static site's content files are source code
+   - `.md` files in `src/` that are part of the build pipeline
    - Any files already excluded by `.gitignore` (e.g., `node_modules/`, `.git/`)
 
 5. Present the identified doc list briefly so the user can verify if anything was missed or incorrectly included.

@@ -53,11 +53,19 @@ Users who want automation can compose with other plugins or CI tools.
 
 AI scans the project structure and identifies documentation files using judgment, not hardcoded patterns:
 
+**FIRST: Exclude Claude Code and plugin metadata — NEVER touch these:**
+- Claude Code metadata: `CLAUDE.md`, `AGENTS.md`
+- `.claude/` directory — commands, hooks, skills, memory
+- `.claude-plugin/` directory — plugin identity and manifests
+- `.mcp.json` — MCP server configuration
+- `docs/specs/`, `docs/plans/` — plugin design docs
+- `.gitignore` files: `node_modules/`, `.git/`, etc.
+
+Then identify project documentation:
 - **Location**: `docs/`, `doc/`, root-level files (README, CHANGELOG, etc.)
 - **Format**: any text format — `.md`, `.rst`, `.adoc`, `.txt`, `.html`, `.tex`, `.org`, etc.
 - **Content**: files describing the project, not implementing it
 - **Exclusion**: source code in doc-like formats (e.g., blog engine `.md` posts)
-- **Also excluded**: Claude Code metadata (CLAUDE.md, .claude/, .claude-plugin/), .gitignore'd files (node_modules/, .git/), and plugin design docs (docs/specs/, docs/plans/)
 
 ### Step 2: Change Classification
 
