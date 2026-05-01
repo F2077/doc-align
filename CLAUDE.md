@@ -21,7 +21,7 @@ doc-align/                        # GitHub repo = Claude Code marketplace
 │       ├── commands/
 │       │   └── align.md       # /doc-align:align command definition
 │       └── skills/
-│           └── doc-align/
+│           └── align/
 │               └── SKILL.md   # Core 7-step analysis workflow
 └── docs/                        # Design specs (not part of plugin distribution)
 ```
@@ -29,7 +29,7 @@ doc-align/                        # GitHub repo = Claude Code marketplace
 ### How /doc-align:align works
 
 1. User runs `/doc-align:align` (with optional commit range like `HEAD~3..HEAD`)
-2. Command delegates to the `doc-align` skill
+2. Command delegates to the `align` skill
 3. Skill executes 7-step workflow: scan docs → gather diff → classify changes → assess impact → generate report → **user confirmation** → execute updates
 4. User must explicitly approve via `AskUserQuestion` before any file is modified
 

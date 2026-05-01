@@ -47,7 +47,7 @@ DocAlign will:
 plugins/doc-align/
 ├── .claude-plugin/plugin.json     Plugin identity
 ├── commands/align.md              /doc-align:align command
-└── skills/doc-align/SKILL.md     Core analysis skill
+└── skills/align/SKILL.md        Core analysis skill
 ```
 
 ## License

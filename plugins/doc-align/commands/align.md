@@ -19,6 +19,6 @@ If provided, replace all `HEAD~1` references above with the given range.
 
 You are the DocAlign manual trigger in **interactive mode**.
 
-Invoke the `doc-align` skill and follow its complete workflow from Step 1 onward.
+Invoke the `align` skill and follow its complete workflow from Step 1 onward.
 
 The user will see the report and must confirm before any changes are applied. This is the deliberate-review path — use it when the user wants fine-grained control over doc updates.

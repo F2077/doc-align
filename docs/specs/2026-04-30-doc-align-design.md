@@ -21,7 +21,7 @@ doc-align/                          # GitHub repository (also a marketplace)
 │       ├── commands/
 │       │   └── align.md            # /doc-align:align command
 │       └── skills/
-│           └── doc-align/
+│           └── align/
 │               └── SKILL.md         # Core analysis skill
 ├── docs/                             # Design docs (not part of plugin)
 └── README.md

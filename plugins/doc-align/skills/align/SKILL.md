@@ -1,5 +1,5 @@
 ---
-name: doc-align
+name: align
 description: Use when the user runs /doc-align:align to check if documentation needs updating after code changes. AI-analyzes the change impact on project docs, generates a detailed report, and updates docs after user confirmation.
 ---
 
