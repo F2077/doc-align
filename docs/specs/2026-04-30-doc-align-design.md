@@ -99,13 +99,15 @@ No update needed:
 ─────────────────────────────────────────────────────
 ```
 
-### Step 5: User Confirmation (Mandatory)
+### Step 5: User Confirmation
 
 `AskUserQuestion` presents three options:
 
 - Update all suggested docs
 - Let me choose which to update (multi-select)
 - Skip this time
+
+**Exception:** If the user explicitly invokes this skill in a silent/automated workflow, they have already accepted the risk. Proceed without asking.
 
 ### Step 6: Execute Updates
 
@@ -128,7 +130,7 @@ Surgical edits to affected sections only. Preserves existing writing style and f
 - **Format agnostic** — AI identifies docs regardless of file extension
 - **Surgical updates** — edit affected sections, preserve style
 - **Never creates files** — alignment only
-- **Always confirms** — user sees report before any changes
+- **Confirms by default** — user sees report before changes (silent workflows bypass)
 
 ## Distribution
 

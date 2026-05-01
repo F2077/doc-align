@@ -31,7 +31,7 @@ doc-align/                        # GitHub repo = Claude Code marketplace
 1. User runs `/doc-align:align` (with optional commit range like `HEAD~3..HEAD`)
 2. Command delegates to the `align` skill
 3. Skill executes 7-step workflow: scan docs → gather diff → classify changes → assess impact → generate report → **user confirmation** → execute updates
-4. User must explicitly approve via `AskUserQuestion` before any file is modified
+4. User approves via `AskUserQuestion` before any file is modified (unless in silent workflow)
 
 ### Key Design Principles
 
@@ -39,7 +39,7 @@ doc-align/                        # GitHub repo = Claude Code marketplace
 - **Format agnostic** — detects any text-based doc format (.md, .rst, .txt, .adoc, etc.)
 - **Surgical edits** — modifies only affected sections, preserves existing writing style
 - **Never creates files** — only aligns existing documentation
-- **Always confirms** — report shown before any changes
+- **Confirms by default** — report shown before changes (silent workflows bypass)
 
 ## Working with This Repository
 

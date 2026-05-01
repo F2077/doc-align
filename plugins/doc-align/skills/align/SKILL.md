@@ -115,14 +115,12 @@ No update needed:
 
 ### Step 6: User Confirmation
 
-**MANDATORY: You MUST call AskUserQuestion to get user approval.**
-
-Present options:
+**By default, ask for confirmation.** Use AskUserQuestion to present options:
 - "Update all suggested docs" — apply all HIGH/MED/LOW changes
 - "Let me choose which to update" — multi-select from the list
 - "Skip this time" — do nothing
 
-Do NOT modify any documentation file without explicit user confirmation.
+**Exception:** If the user explicitly invokes this skill in a silent/automated workflow (e.g., via CLI flags, environment variables, or direct skill invocation with an explicit bypass flag), they have already accepted the risk. In that case, you may proceed without asking.
 
 ### Step 7: Execute Updates
 
@@ -136,9 +134,10 @@ Based on user selection:
 
 ### Important Rules
 
-- **Never skip Step 6 (user confirmation).** This is always interactive.
+- **Prefer Step 6 (user confirmation).** Ask before making changes unless the user has explicitly opted into a silent workflow.
 - **Never create new documentation files.** This skill only aligns existing docs.
 - **Preserve existing writing style.** Match the tone and format of the existing doc.
 - **Be specific in reports.** Don't say "README needs updating" — say "README line 23: the install command is missing the `--save-dev` flag for the new dependency."
 - **If unsure about impact, mark as LOW** and let the user decide.
 - **Do not assume `.md` = documentation.** Let the project context guide identification.
+- **Never touch Claude Code or plugin metadata.** This includes CLAUDE.md, AGENTS.md, `.claude/` directory, `.claude-plugin/` directory, `.mcp.json`, `docs/specs/`, `docs/plans/`, and anything in `.gitignore`. These are Claude's own files, not project documentation.
