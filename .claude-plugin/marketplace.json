@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "doc-align-marketplace",
   "version": "1.0.0",
-  "description": "DocAlign plugin marketplace - Documentation alignment plugin for Claude Code",
+  "description": "DocAlign plugin marketplace - AI-powered documentation alignment for Claude Code",
   "owner": {
     "name": "F2077"
   },
