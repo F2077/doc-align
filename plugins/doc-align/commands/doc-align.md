@@ -1,5 +1,5 @@
 ---
-description: Manually trigger DocAlign to review and align documentation with recent code changes (interactive mode with confirmation)
+description: Analyze code changes and update documentation to keep it aligned. Shows impact report and applies changes after user confirmation.
 allowed-tools: Bash(git log:*), Bash(git diff:*), Bash(find *), Read, Edit, Glob, Grep, AskUserQuestion
 ---
 
@@ -19,6 +19,6 @@ If provided, replace all `HEAD~1` references above with the given range.
 
 You are the DocAlign manual trigger in **interactive mode**.
 
-Invoke the `doc-align:doc-align` skill and follow its complete workflow from Step 1 onward.
+Invoke the `doc-align` skill and follow its complete workflow from Step 1 onward.
 
 The user will see the report and must confirm before any changes are applied. This is the deliberate-review path — use it when the user wants fine-grained control over doc updates.
