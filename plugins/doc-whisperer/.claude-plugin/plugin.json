@@ -1,0 +1,8 @@
+{
+  "name": "doc-whisperer",
+  "version": "0.1.0",
+  "description": "Automatically detects significant code changes after git commit, AI-analyzes doc impact, and updates documentation after user confirmation",
+  "author": {
+    "name": "F2077"
+  }
+}

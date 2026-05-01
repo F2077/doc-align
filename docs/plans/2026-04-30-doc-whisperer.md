@@ -1,0 +1,63 @@
+# DocWhisperer - Implementation Plan
+
+**Status:** Complete (v0.1.0)
+
+**Architecture:** Command-only. `/doc-align` is the sole entry point. No hooks.
+
+---
+
+## Final File Structure
+
+```
+.claude-plugin/marketplace.json     Marketplace manifest (repo root)
+plugins/doc-whisperer/
+├── .claude-plugin/plugin.json      Plugin identity
+├── commands/doc-align.md           /doc-align command (sole entry point)
+└── skills/doc-whisperer/SKILL.md   Core analysis skill (7-step workflow)
+```
+
+---
+
+## Completed Tasks
+
+- [x] **Plugin scaffold** — `plugin.json` with name, version, author
+- [x] **Core skill (SKILL.md)** — 7-step AI workflow:
+  1. Identify documentation files (format-agnostic, AI judgment)
+  2. Gather git context
+  3. Classify changes (Structural/API/Logic/Config/Style)
+  4. Assess document impact (HIGH/MED/LOW/OK)
+  5. Generate report
+  6. User confirmation via AskUserQuestion (mandatory)
+  7. Execute surgical updates
+- [x] **Manual trigger command** — `/doc-align` with optional commit range
+- [x] **Marketplace layer** — `marketplace.json` for GitHub distribution
+- [x] **Project README** — installation and usage docs
+
+## Removed Features (design iterations)
+
+These were implemented then removed after testing:
+
+- **PostToolUse hook** — removed because hook output is invisible to users and wastes tokens
+- **Silent auto-update mode** — removed because surprising users with auto-edits on legacy docs is risky
+- **Hardcoded `.md` detection** — replaced with AI-driven format-agnostic identification
+- **Hook scripts** (`run-hook.cmd`, `post-commit-check`) — deleted with hook removal
+
+## Testing Results
+
+Tested against a Factorio-like game project with 4 commit sizes:
+
+| Size | Lines | Impact | Result |
+|------|-------|--------|--------|
+| Small | 1 | 1×MED | User chose skip |
+| Medium | 174 | 3×HIGH | User chose partial update |
+| Large | 344 | 3×HIGH | Full update with confirmation |
+| Extra-large | 6075 | 2×HIGH+1×MED | Stat-only fallback, full update |
+
+Also tested format-agnostic detection with `.md`, `.rst`, and `.txt` docs — all correctly identified.
+
+## Distribution
+
+```bash
+claude plugin marketplace add https://github.com/<user>/doc-whisperer
+claude plugin install doc-whisperer
+```
